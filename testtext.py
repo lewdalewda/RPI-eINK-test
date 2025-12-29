@@ -29,11 +29,15 @@ try:
     # .convert('1') garantit que l'image est en Noir et Blanc pur pour l'e-paper
     image_path = os.path.join(picdir, 'frame1.bmp')
     image = Image.open(image_path).convert('1')
+    draw = ImageDraw.Draw(image)
+    
+    draw.text((10, 90), 'Rect', font=font15, fill=0)
+   
 
     # 3. Affichage
     logging.info("Affichage de l'image...")
     epd.display(epd.getbuffer(image))
-    ImageDraw.text((10, 90), 'Rect', font=font15, fill=0)
+    
     # 4. Mise en veille (crucial pour la durée de vie de l'écran)
     epd.sleep()
     logging.info("Terminé.")
