@@ -1,5 +1,4 @@
-#!/usr/bin/python
-# -*- coding:utf-8 -*-
+
 
 import sys
 import os
@@ -31,7 +30,7 @@ try:
     image = Image.open(image_path).convert('1')
     draw = ImageDraw.Draw(image)
     
-    draw.text((10, 90), 'Rect', font=font15, fill=0)
+    draw.text((2, 2), 'Rect', font=font15, fill=0)
    
 
     # 3. Affichage
